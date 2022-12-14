@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/BioBells/AndroidBioBells/app/src/main/res/drawable/background_border.xml" value="0.175" />
+        <entry key="..\:/BioBells/AndroidBioBells/app/src/main/res/drawable/bg_layout.xml" value="0.152" />
+        <entry key="..\:/BioBells/AndroidBioBells/app/src/main/res/drawable/bg_skills.xml" value="0.175" />
         <entry key="..\:/BioBells/AndroidBioBells/app/src/main/res/drawable/rounded_corner.xml" value="0.175" />
-        <entry key="..\:/BioBells/AndroidBioBells/app/src/main/res/layout/activity_doctor_details.xml" value="0.10989583333333333" />
+        <entry key="..\:/BioBells/AndroidBioBells/app/src/main/res/layout/activity_doctor_details.xml" value="0.2" />
         <entry key="..\:/BioBells/AndroidBioBells/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/BioBells/AndroidBioBells/app/src/main/res/layout/activity_login.xml" value="0.21784420289855072" />
         <entry key="..\:/BioBells/AndroidBioBells/app/src/main/res/layout/activity_main.xml" value="0.21784420289855072" />
