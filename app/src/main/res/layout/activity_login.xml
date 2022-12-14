@@ -105,13 +105,15 @@
                         android:hint="Password"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/showHideBtnLog"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginRight="20dp"
-                    android:text="Show"/>
+                    android:text="Show"
+                    android:textColor="@color/white"
+                    android:background="@drawable/rounded_corner"/>
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -123,7 +125,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rounded_corner"
                 android:text="Login"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="13sp"
                 android:layout_gravity="center"/>
 
@@ -154,7 +156,6 @@
                 android:visibility="invisible"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"/>
-
 
         </LinearLayout>
     </ScrollView>
