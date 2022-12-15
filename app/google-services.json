@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "606980255699",
+    "project_id": "biobells-41fcc",
+    "storage_bucket": "biobells-41fcc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606980255699:android:184cc8b5fd2ab6c6698926",
+        "android_client_info": {
+          "package_name": "com.tkiet.biobells"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606980255699-1biq5r86qc5tac0kaaeuhnsi14pj1o2a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tkiet.biobells",
+            "certificate_hash": "54ee6f5dcd2a8807bfeeb78ef5674f8c116b78dc"
+          }
+        },
+        {
+          "client_id": "606980255699-laot58npp0kab0i8shqk0bioca6d7rlb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfjKWdUb07JatTTFASCc3T_7k4igu15ts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606980255699-laot58npp0kab0i8shqk0bioca6d7rlb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
