@@ -42,11 +42,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Registration extends AppCompatActivity {
 
     private static final String TAG = "TAG";
-    EditText mFullName, mEmail, mPassword, mPhone;
+    EditText mFullName, mEmail, mPassword, mPhone, mAadhar;
     Button mRegisterBtn, mPWD;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
@@ -67,6 +69,7 @@ public class Registration extends AppCompatActivity {
         mPhone      = findViewById(R.id.phone);
         mPassword   = findViewById(R.id.pwd);
         mPWD = findViewById(R.id.showHideBtn);
+        mAadhar = findViewById(R.id.aadhar);
 
         if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(), Login.class));
@@ -100,6 +103,7 @@ public class Registration extends AppCompatActivity {
                 final String fullName   = mFullName.getText().toString();
                 final String email      = mEmail.getText().toString().trim();
                 final String phone      = mPhone.getText().toString();
+                final String aadhar     = mAadhar.getText().toString();
                 String password = mPassword.getText().toString().trim();
 
 //                String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
@@ -145,6 +149,20 @@ public class Registration extends AppCompatActivity {
                         mPhone.setError("Invalid Mobile Number");
                         return;
                     }
+                }
+
+
+                if(aadhar.isEmpty()){
+                    mAadhar.setError("Aadhar Number is Required");
+//                    //Aadhar
+//                    String adharString =" ^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$ ";
+//                    EditText adhar1 = (EditText) findViewById(R.id.aadhar);
+//                    Pattern p = Pattern.compile(adharString);
+//                    Matcher m = p.matcher(aadhar);
+//                    m.matches();
+//                    mAadhar.setError("Invalid Aadhar Number");
+                    return;
+
                 }
 
                 if(TextUtils.isEmpty(password)){
