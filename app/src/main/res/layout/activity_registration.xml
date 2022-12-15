@@ -115,7 +115,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
-                    android:hint="Aadhar Number (16 Digits)"
+                    android:hint="Aadhar Number (12 Digits)"
                     android:id="@+id/aadhar"/>
             </com.google.android.material.textfield.TextInputLayout>
 
