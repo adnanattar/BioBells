@@ -71,6 +71,7 @@ public class Home extends AppCompatActivity {
 // send.putExtra("cropN", onion.getText().toString());
                 // Start Prescriptions activity
                 startActivity(send);
+
             }
         });
     }
