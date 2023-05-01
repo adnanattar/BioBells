@@ -86,6 +86,14 @@
                     android:id="@+id/email"/>
             </com.google.android.material.textfield.TextInputLayout>
 
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/choose_user"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background_border" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"

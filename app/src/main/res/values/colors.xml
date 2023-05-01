@@ -12,4 +12,31 @@
     <color name="yellow">#ffd146</color>
     <color name="orange">#ff8850</color>
     <color name="blue">#62d4f4</color>
+
+    <color name="custom_react">#FFFFFF</color>
+    <color name="custom_react_txt">#666666</color>
+    <color name="my_account_bg">#ffc966</color>
+    <color name="btn_color">#ffa500</color>
+
+    <color name="red_400">#EF5350</color>
+    <color name="grey_90">#263238</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_40">#999999</color>
+    <color name="red_300">#E57373</color>
+    <color name="colorPrimaryDark">#1565C0</color>
+    <color name="orange_600">#FB8C00</color>
+    <color name="orange_500">#FF9800</color>
+    <color name="colorPrimary">#FF9800</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="blue_600">#1E88E5</color>
+
+    <color name="grey_5">#f2f2f2</color>
+    <color name="overlay_dark_30">#4D000000</color>
+    <color name="indigo_A700">#304FFE</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="overlay_dark_60">#99000000</color>
+    <color name="overlay_light_20">#33FFFFFF</color>
+
+    <color name="lightGray">#F2F2F2</color>
 </resources>

@@ -1,5 +1,5 @@
 package com.tkiet.biobells;
-
+// Import required libraries and classes
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,9 +27,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
-    EditText mEmail,mPassword;
+    // Declare variables
+    EditText mEmail, mPassword;
     Button mLoginBtn, mPWDLog;
-    TextView mCreateBtn,forgotTextLink;
+    TextView mCreateBtn, forgotTextLink;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
     private FirebaseUser mCurrentUser;
@@ -39,8 +40,11 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Set the layout file for this activity
         setContentView(R.layout.activity_login);
 
+        // Bind variables to the layout elements
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressBar);
@@ -50,11 +54,12 @@ public class Login extends AppCompatActivity {
         forgotTextLink = findViewById(R.id.forgotPassword);
         mPWDLog = findViewById(R.id.showHideBtnLog);
 
+        // Add a click listener to the show/hide password button
         mPWDLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                global.hideKeyboard();
 
+                // Check the current text of the button to determine the current state of the password field
                 if(mPWDLog.getText().equals("Hide"))
                 {
                     mPWDLog.setText("Show");
@@ -68,15 +73,19 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        // Get the current user from Firebase Authentication
         mCurrentUser = fAuth.getCurrentUser();
+
+        // Add a click listener to the login button
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                // Get the values of the email and password fields
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
 
-
+                // Validate the email field
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email is Required.");
                     return;
@@ -88,19 +97,21 @@ public class Login extends AppCompatActivity {
                     }
                 }
 
+                // Validate the password field
                 if(TextUtils.isEmpty(password)){
                     mPassword.setError("Password is Required.");
                     return;
                 }
-
+                // Validate the password field for lenght of the password
                 if(password.length() < 6){
                     mPassword.setError("Password must contains minimum 6 Characters");
                     return;
                 }
 
+                // Show the progress bar
                 progressBar.setVisibility(View.VISIBLE);
 
-                // authenticate the user
+                // Authenticate the user with Firebase Authentication
 
                 fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override

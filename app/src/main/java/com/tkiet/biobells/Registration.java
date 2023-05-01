@@ -55,6 +55,7 @@ public class Registration extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseFirestore fStore;
     String userID;
+    Spinner choose_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,67 @@ public class Registration extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), Login.class));
             finish();
         }
+
+        //Choose User
+        choose_user = findViewById(R.id.choose_user);
+
+        // Initializing a String Array
+        String[] list_users = new String[]{
+//                "Select Users",
+                "Patient",
+                "Doctor"
+        };
+
+        final List<String> userList = new ArrayList<>(Arrays.asList(list_users));
+
+        {
+            // Initializing an ArrayAdapter
+            final ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this,R.layout.spinner_item,list_users){
+                @Override
+                public boolean isEnabled(int position){
+                    if(position == 0)
+                    {
+                        // Disable the first item from Spinner
+                        // First item will be use for hint
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                @Override
+                public View getDropDownView(int position, View convertView, ViewGroup parent) {
+                    View view = super.getDropDownView(position, convertView, parent);
+                    TextView tv = (TextView) view;
+                    if(position == 0){
+                        // Set the hint text color gray
+                        tv.setTextColor(Color.BLACK);
+                    }
+                    else {
+                        tv.setTextColor(Color.BLACK);
+                    }
+                    return view;
+                }
+            };
+
+            spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
+            choose_user.setAdapter(spinnerArrayAdapter);
+
+            choose_user.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    String selectedItemText = (String) parent.getItemAtPosition(position);
+                    // If user change the default selection
+                    // First item is disable and it is used for hint
+                }
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+        };
+
 
         mPWD.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +167,7 @@ public class Registration extends AppCompatActivity {
                 final String phone      = mPhone.getText().toString();
                 final String aadhar     = mAadhar.getText().toString();
                 String password = mPassword.getText().toString().trim();
+                final String users = choose_user.getSelectedItem().toString();
 
 //                String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
 
@@ -112,6 +175,9 @@ public class Registration extends AppCompatActivity {
                 Date date = Calendar.getInstance().getTime();
                 SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
                 String RegistrationDate = df.format(date);
+
+
+
 
                 if(fullName.isEmpty()){
                     mFullName.setError("Full Name is Required");
@@ -137,6 +203,12 @@ public class Registration extends AppCompatActivity {
                     }
                 }
 
+//                if(users.equals("Select Users")){
+//                    TextView errorText = (TextView)choose_user.getSelectedView();
+//                    errorText.setError("");
+//                    errorText.setTextColor(Color.RED);//just to highlight that this is an error
+//                    errorText.setText("Please Select Proper User");
+//                }
 
                 if(phone.isEmpty()){
                     mPhone.setError("Mobile Number is Required");
@@ -207,6 +279,12 @@ public class Registration extends AppCompatActivity {
                             user.put("fName",fullName);
                             user.put("email",email);
                             user.put("phone",phone);
+                            user.put("user",users);
+
+                            user.put("currentDoctor", "");
+                            user.put("bloodGroup", "");
+                            user.put("state", "");
+                            user.put("city", "");
 
                             //Date And Time
                             user.put("RegistrationDate",RegistrationDate);
